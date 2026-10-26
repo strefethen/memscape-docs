@@ -1,0 +1,72 @@
+{
+  "appCommit": "faa853651ca9e2cfd563f19082cba6f80f0e1a23",
+  "capturedAt": "2026-10-26",
+  "device": "iPhone 17 Pro",
+  "runtime": "iOS 26.0",
+  "dimensions": [
+    1206,
+    2622
+  ],
+  "fixtureFlag": "-memscape-showcase-journal",
+  "corpusVersion": 1,
+  "content": "Fictional journal entries and AI-generated photographs. Every app interface is an original unedited simctl screenshot.",
+  "appearance": [
+    "light",
+    "dark"
+  ],
+  "contentSize": "medium",
+  "statusBarTime": "9:41",
+  "captureTool": "xcrun simctl io screenshot",
+  "screenshots": {
+    "home-light.png": {
+      "sha256": "f8e6c90d103efef41dbbc2ca49bd2ccff13daee83d3e5d1de3628ba14607b5a6",
+      "route": "home"
+    },
+    "home-dark.png": {
+      "sha256": "5a1a5688a4192c2094e02643277e4d1b635b87a214e69b3daf37745225e3d462",
+      "route": "home"
+    },
+    "entry-light.png": {
+      "sha256": "4e91c2f1890f392aaac667cd70e5a4c35562ede80947c961534cc2b8c31e0912",
+      "route": "entry-latest"
+    },
+    "entry-dark.png": {
+      "sha256": "23fbc54a8c096f15bc1d9e6f465a31e48bf9bfbac74117cadb71df372aaeab05",
+      "route": "entry-latest"
+    },
+    "calendar-light.png": {
+      "sha256": "0ac45e110110b44b3f32169294b37789d8e599a78aa1d980f9702adf7a415b23",
+      "route": "calendar",
+      "selection": "October 25, 2026"
+    },
+    "calendar-dark.png": {
+      "sha256": "319791ec9449427055bec9b64b60978c4b3484a969ecedc811090a3cc95944fb",
+      "route": "calendar",
+      "selection": "October 25, 2026"
+    },
+    "photos-light.png": {
+      "sha256": "5905f4bc71ef12967b274aa4f244adc6cabb2aafb160204964fd40a4083c8fea",
+      "route": "photos"
+    },
+    "photos-dark.png": {
+      "sha256": "1e01e02856506abcba0b680e443dd0c86e999d43f514c3e60e3afe29dea9cdf7",
+      "route": "photos"
+    },
+    "tags-light.png": {
+      "sha256": "a6ec7822472fe1413dd83a85c25c3f28755e8a8b057c44a462ace8a8aec43f19",
+      "route": "settings > Tags"
+    },
+    "tags-dark.png": {
+      "sha256": "9dcc78ea6c452bab1ef14d8f8728d43873338d4f68bf9f8d9dbb0c66c62406c6",
+      "route": "settings > Tags"
+    },
+    "colors-light.png": {
+      "sha256": "d8fbba450247debd2e3107689e47e4f9fb3a4017fa75f61bedf3c31accf9ec76",
+      "route": "settings > Tags > Family > Color"
+    },
+    "colors-dark.png": {
+      "sha256": "e7bec7ca883357100607661c534e4b8d4fd221bb75427865413fc162316c381f",
+      "route": "settings > Tags > Family > Color"
+    }
+  }
+}

@@ -2,6 +2,8 @@
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
+import hashlib
+import json
 import re
 import struct
 import unittest
@@ -72,18 +74,37 @@ class ProductPageTests(unittest.TestCase):
         self.assertNotIn("<form", self.source)
 
     def test_product_visuals_use_full_real_captures(self):
-        sources = {attrs["srcset"] for tag, attrs in self.elements if tag == "source"}
+        manifest = json.loads((PAGE.parent / "assets/screenshots/capture.json").read_text())
+        self.assertEqual(manifest["fixtureFlag"], "-memscape-showcase-journal")
+        self.assertRegex(manifest["appCommit"], r"^[0-9a-f]{40}$")
+        self.assertEqual(manifest["dimensions"], [1206, 2622])
+        sources = {urlsplit(attrs["srcset"]).path for tag, attrs in self.elements if tag == "source"}
         self.assertEqual(sources, {
-            f"assets/screenshots/{name}-dark.png" for name in ("home", "entry", "calendar", "photos")
+            f"assets/screenshots/{name}-dark.png" for name in ("home", "entry", "calendar", "photos", "tags", "colors")
         })
-        for name in ("home", "entry", "calendar", "photos"):
+        for name in ("home", "entry", "calendar", "photos", "tags", "colors"):
             for appearance in ("light", "dark"):
                 path = PAGE.parent / f"assets/screenshots/{name}-{appearance}.png"
                 header = path.read_bytes()[:24]
                 self.assertEqual(header[:8], b"\x89PNG\r\n\x1a\n")
                 self.assertEqual(struct.unpack(">II", header[16:24]), (1206, 2622))
+                self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),
+                                 manifest["screenshots"][path.name]["sha256"])
         for invented in ("forest.svg", "memory-row", "calendar-days", "app-heading", "island"):
             self.assertNotIn(invented, self.source)
+
+    def test_memory_copy_and_current_features(self):
+        self.assertIn("<title>MemScape — A place for your memories.</title>", self.source)
+        self.assertIn('property="og:title" content="MemScape — A place for your memories."', self.source)
+        self.assertIn("A place for<br>your memories.</h1>", self.source)
+        self.assertIn("<p>A place for your memories.</p>", self.source)
+        self.assertNotIn("Shipped the build", self.source)
+        self.assertNotIn("A place for your days", self.source)
+        self.assertIn("visual map", self.source)
+        self.assertIn("twelve tag colors", self.source)
+        self.assertIn("photos are AI-generated", self.source)
+        for name in ("tags", "colors"):
+            self.assertIn(f'assets/screenshots/{name}-light.png', self.source)
 
     def test_supporting_pages_and_navigation(self):
         for name in ("privacy-policy.html", "support.html"):

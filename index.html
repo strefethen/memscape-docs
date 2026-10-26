@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>MemScape — A place for your days.</title>
+  <title>MemScape — A place for your memories.</title>
   <meta name="description" content="A personal journal for iPhone. Write a little, keep the details, and find your way back. Your words and photos, in files you own.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-  <meta property="og:title" content="MemScape — A place for your days.">
-  <meta property="og:description" content="Write a little. Keep the details. Find your way back. A personal journal for iPhone.">
+  <meta property="og:title" content="MemScape — A place for your memories.">
+  <meta property="og:description" content="A place for your memories. Photos, colored tags, and a visual calendar. A personal journal for iPhone.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/app-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/app-icon.png">
-  <link rel="stylesheet" href="assets/product.css">
+  <link rel="stylesheet" href="assets/product.css?v=20261026">
   <script defer src="assets/product.js"></script>
 </head>
 <body>
@@ -28,14 +28,14 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="product-name">MemScape for iPhone</p>
-        <h1 id="hero-title">A place for<br>your days.</h1>
+        <h1 id="hero-title">A place for<br>your memories.</h1>
         <p class="hero-description">The big adventures. The little things.<br>A personal journal for everything you want to keep.</p>
         <a class="text-link" href="#highlights">Get to know MemScape <span aria-hidden="true">›</span></a>
       </div>
       <figure class="product-stage">
-        <div class="phone phone-timeline"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/home-dark.png"><img src="assets/screenshots/home-light.png" width="1206" height="2622" alt="MemScape Home screen showing the sample journal timeline"></picture></div>
-        <div class="phone phone-entry"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/entry-dark.png"><img src="assets/screenshots/entry-light.png" width="1206" height="2622" alt="MemScape entry screen showing the sample entry Shipped the build"></picture></div>
-        <figcaption>Actual MemScape screenshots. Synthetic sample journal.</figcaption>
+        <div class="phone phone-timeline"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/home-dark.png?v=faa8536-final"><img src="assets/screenshots/home-light.png?v=faa8536-final" width="1206" height="2622" alt="MemScape Home timeline with fictional family memories and colored tags"></picture></div>
+        <div class="phone phone-entry"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/entry-dark.png?v=faa8536-final"><img src="assets/screenshots/entry-light.png?v=faa8536-final" width="1206" height="2622" alt="MemScape entry The long way home with a beach photograph and colored Family and Outdoors tags"></picture></div>
+        <figcaption>Actual MemScape screenshots. Fictional memories, AI-generated photos.</figcaption>
       </figure>
     </section>
 
@@ -58,17 +58,25 @@
         </div>
         <div class="journal-preview" id="view-timeline">
           <div class="preview-copy"><h3>Every entry, in order.</h3><p>Scroll through your days, with your words, photos, tags, and the details you captured.</p></div>
-          <div class="screenshot-frame"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/home-dark.png"><img src="assets/screenshots/home-light.png" width="1206" height="2622" alt="MemScape Home timeline with sample entries grouped by month"></picture></div>
+          <div class="screenshot-frame"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/home-dark.png?v=faa8536-final"><img src="assets/screenshots/home-light.png?v=faa8536-final" width="1206" height="2622" alt="MemScape Home timeline with sample entries grouped by month"></picture></div>
         </div>
         <div class="journal-preview" id="view-calendar" hidden>
-          <div class="preview-copy"><h3>Start with a day.</h3><p>Browse your journal by date in the calendar.</p></div>
-          <div class="screenshot-frame"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/calendar-dark.png"><img src="assets/screenshots/calendar-light.png" width="1206" height="2622" alt="MemScape Calendar screen showing dates from the sample journal"></picture></div>
+          <div class="preview-copy"><h3>A month of moments.<br>At a glance.</h3><p>Your photos turn the calendar into a visual map of your memories. Pick a day to return to its entries.</p></div>
+          <div class="screenshot-frame"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/calendar-dark.png?v=faa8536-final"><img src="assets/screenshots/calendar-light.png?v=faa8536-final" width="1206" height="2622" alt="MemScape visual October calendar with photo tiles for family meals, travel, a birthday and a beach walk"></picture></div>
         </div>
         <div class="journal-preview" id="view-photos" hidden>
           <div class="preview-copy"><h3>Let a photo take you back.</h3><p>Browse the photos in your journal and open the entries behind them.</p></div>
-          <div class="screenshot-frame"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/photos-dark.png"><img src="assets/screenshots/photos-light.png" width="1206" height="2622" alt="MemScape Photos screen showing the synthetic sample photo grid"></picture></div>
+          <div class="screenshot-frame"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/photos-dark.png?v=faa8536-final"><img src="assets/screenshots/photos-light.png?v=faa8536-final" width="1206" height="2622" alt="MemScape Photos grid with beach, birthday, redwood trail, food and travel memories"></picture></div>
         </div>
-        <p class="demo-note">Actual app screenshots from an iPhone 17 Pro simulator. All entries and photos are synthetic fixtures.</p>
+        <p class="demo-note">Actual app screenshots from an iPhone 17 Pro simulator. Entries are fictional; photos are AI-generated. App interfaces are unedited captures.</p>
+      </div>
+    </section>
+
+    <section class="tags band" aria-labelledby="tags-title">
+      <div class="wrap section-heading"><p class="section-label">The threads of your life</p><h2 id="tags-title">Your memories.<br>Your colors.</h2><p class="lede">Family in orange. The outdoors in green.<br class="desktop-break"> Give each tag a color that feels like you,<br class="desktop-break"> then follow it through your journal.</p></div>
+      <div class="tag-showcase wrap-wide">
+        <figure><div class="screenshot-frame"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/tags-dark.png?v=faa8536-final"><img src="assets/screenshots/tags-light.png?v=faa8536-final" width="1206" height="2622" alt="MemScape Tags settings showing meaningful colored tags including Family, Home, Food and Outdoors" loading="lazy"></picture></div><h3>A little order.<br>A lot of meaning.</h3><p>Tag the people, places, and things you want to find again. See each tag’s color and entry count together.</p></figure>
+        <figure><div class="screenshot-frame"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/colors-dark.png?v=faa8536-final"><img src="assets/screenshots/colors-light.png?v=faa8536-final" width="1206" height="2622" alt="MemScape tag Color settings with the available palette and colors already in use" loading="lazy"></picture></div><h3>Make it<br>your own.</h3><p>Choose from twelve tag colors. See which colors you already use, and change them whenever you like.</p></figure>
       </div>
     </section>
 
@@ -88,6 +96,6 @@
 
     <section class="availability band" id="availability" aria-labelledby="availability-title"><div class="wrap"><img class="closing-icon" src="assets/app-icon.png" width="80" height="80" alt="" loading="lazy"><h2 id="availability-title">More of your life.<br>Worth remembering.</h2><p class="lede">MemScape. A personal journal for iPhone.</p><p class="availability-status"><span aria-hidden="true"></span> In development</p><p class="supporting">Public availability hasn’t been announced yet.</p><a class="text-link" href="#top">Back to the beginning <span aria-hidden="true">↑</span></a></div></section>
   </main>
-  <footer><div class="wrap-wide footer-inner"><a class="wordmark" href="#top">MemScape</a><p>A place for your days.</p><a href="support.html">Support</a><a href="privacy-policy.html">Privacy policy</a><span>For iPhone · iOS 26 or later</span></div><p class="footer-note wrap-wide">Day One is a trademark of its respective owner. MemScape is an independent app.</p></footer>
+  <footer><div class="wrap-wide footer-inner"><a class="wordmark" href="#top">MemScape</a><p>A place for your memories.</p><a href="support.html">Support</a><a href="privacy-policy.html">Privacy policy</a><span>For iPhone · iOS 26 or later</span></div><p class="footer-note wrap-wide">Day One is a trademark of its respective owner. MemScape is an independent app.</p></footer>
 </body>
 </html>

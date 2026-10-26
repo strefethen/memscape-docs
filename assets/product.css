@@ -63,6 +63,10 @@ figcaption { position: absolute; bottom: 8px; width: 100%; font-size: 11px; colo
 .screenshot-frame { border: 5px solid #202222; border-radius: 42px; overflow: hidden; background: #202222; width: 100%; }
 .screenshot-frame img { width: 100%; height: auto; }
 .demo-note { text-align: center; color: var(--secondary); font-size: 12px; margin-top: 20px; }
+.tag-showcase { display: grid; grid-template-columns: repeat(2, 1fr); gap: 64px; margin-top: 56px; text-align: center; }
+.tag-showcase .screenshot-frame { max-width: 300px; margin-inline: auto; }
+.tag-showcase h3 { font-size: 30px; margin-top: 30px; }
+.tag-showcase p { color: var(--secondary); max-width: 340px; margin: 18px auto 0; }
 .ownership { background: var(--surface); }
 .ownership-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
 .folder-symbol { width: 70px; color: var(--green); margin-bottom: 28px; }
@@ -105,6 +109,7 @@ footer { padding: 28px 0; background: var(--surface); color: var(--secondary); f
   .phone-timeline { left: 6%; top: 26px; transform: rotate(-7deg); }
   .phone-entry { right: 6%; transform: rotate(6deg); }
   figcaption { bottom: 8px; }
+  .tag-showcase { grid-template-columns: 1fr; gap: 56px; }
   .feature-grid { grid-template-columns: 1fr; gap: 44px; max-width: 440px; margin-top: 55px; }
   .feature h3 br { display: none; }
   .feature-symbol { margin-bottom: 16px; }
