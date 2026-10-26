@@ -31,7 +31,7 @@ jobs:
       - name: Stage public files
         run: |
           mkdir _site
-          cp index.html _site/index.html
+          cp index.html privacy-policy.html support.html _site/
           cp -R assets _site/assets
       - name: Configure Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0

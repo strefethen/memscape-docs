@@ -85,6 +85,31 @@ class ProductPageTests(unittest.TestCase):
         for invented in ("forest.svg", "memory-row", "calendar-days", "app-heading", "island"):
             self.assertNotIn(invented, self.source)
 
+    def test_supporting_pages_and_navigation(self):
+        for name in ("privacy-policy.html", "support.html"):
+            source = (PAGE.parent / name).read_text()
+            document = ProductDocument()
+            document.feed(source)
+            self.assertEqual(sum(tag == "h1" for tag, _ in document.elements), 1)
+            ids = {attrs["id"] for _, attrs in document.elements if "id" in attrs}
+            for tag, attrs in document.elements:
+                for attribute in ("src", "href"):
+                    if attribute not in attrs:
+                        continue
+                    destination = urlsplit(attrs[attribute])
+                    if destination.scheme:
+                        self.assertEqual(destination.scheme, "https")
+                        self.assertEqual(attribute, "href")
+                        continue
+                    if destination.path:
+                        self.assertTrue((PAGE.parent / destination.path).is_file())
+                    elif destination.fragment:
+                        self.assertIn(destination.fragment, ids)
+            self.assertIn(f'href="{name}"', self.source)
+        policy = (PAGE.parent / "privacy-policy.html").read_text()
+        self.assertIn("TestFlight Beta Testing", policy)
+        self.assertIn('href="support.html"', policy)
+
 
 if __name__ == "__main__":
     unittest.main()
