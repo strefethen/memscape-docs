@@ -6,15 +6,16 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "_site"
 PAGES = {"index.html", "privacy-policy.html", "support.html"}
+CONTROLS = {"_headers"}
 
 
 def stage():
     tracked = subprocess.check_output(
         ["git", "ls-files", "-z"], cwd=ROOT
     ).decode().split("\0")
-    allowed = {name for name in tracked if name in PAGES or name.startswith("assets/")}
-    if not PAGES <= allowed:
-        raise SystemExit("The three public HTML pages must be tracked before staging")
+    allowed = {name for name in tracked if name in PAGES | CONTROLS or name.startswith("assets/")}
+    if not PAGES | CONTROLS <= allowed:
+        raise SystemExit("The three public HTML pages and deployment controls must be tracked before staging")
     for name in sorted(allowed):
         source = ROOT / name
         destination = DESTINATION / name
@@ -30,7 +31,7 @@ def stage():
     for name in allowed:
         if (ROOT / name).read_bytes() != (DESTINATION / name).read_bytes():
             raise SystemExit(f"Staged bytes differ: {name}")
-    print(f"Staged {len(allowed)} public HTML/assets with exact source bytes")
+    print(f"Staged {len(allowed - CONTROLS)} public HTML/assets and {len(CONTROLS)} deployment control with exact source bytes")
 
 
 if __name__ == "__main__":
