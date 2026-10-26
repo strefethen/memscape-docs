@@ -98,6 +98,10 @@ class ProductPageTests(unittest.TestCase):
                         continue
                     destination = urlsplit(attrs[attribute])
                     if destination.scheme:
+                        if destination.scheme == "mailto":
+                            self.assertEqual(attribute, "href")
+                            self.assertEqual(destination.path, "support@commutedash.com")
+                            continue
                         self.assertEqual(destination.scheme, "https")
                         self.assertEqual(attribute, "href")
                         continue
@@ -106,6 +110,7 @@ class ProductPageTests(unittest.TestCase):
                     elif destination.fragment:
                         self.assertIn(destination.fragment, ids)
             self.assertIn(f'href="{name}"', self.source)
+            self.assertIn('href="mailto:support@commutedash.com"', source)
         policy = (PAGE.parent / "privacy-policy.html").read_text()
         self.assertIn("TestFlight Beta Testing", policy)
         self.assertIn('href="support.html"', policy)
