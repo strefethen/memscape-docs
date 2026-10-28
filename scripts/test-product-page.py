@@ -55,8 +55,10 @@ class ProductPageTests(unittest.TestCase):
                     "src": "https://analytics.ca-17.com/js/script.js",
                 }:
                     continue
+                if tag == "a" and attribute == "href" and attrs[attribute] == "https://testflight.apple.com/join/MHj84QRC":
+                    continue
                 self.assertFalse(destination.scheme or destination.netloc,
-                                 "Only the approved Plausible script may be external")
+                                 "Only the approved Plausible script and TestFlight link may be external")
                 if destination.path:
                     self.assertTrue((PAGE.parent / destination.path).is_file(), attrs[attribute])
                 if destination.fragment:
@@ -74,7 +76,10 @@ class ProductPageTests(unittest.TestCase):
         self.assertNotIn("hidden", elements["view-timeline"])
         self.assertIn("hidden", elements["view-calendar"])
         self.assertIn("hidden", elements["view-photos"])
-        self.assertIn("In development", self.source)
+        self.assertIn("TestFlight beta available", self.source)
+        self.assertIn("up to 25 testers", self.source)
+        self.assertIn('href="https://testflight.apple.com/join/MHj84QRC"', self.source)
+        self.assertNotIn("Public availability hasn’t been announced", self.source)
         self.assertIn("Actual MemScape screenshots", self.source)
         self.assertNotIn("data/DayOne", self.source)
         self.assertNotIn("<form", self.source)
