@@ -49,8 +49,14 @@ class ProductPageTests(unittest.TestCase):
                 if attribute not in attrs:
                     continue
                 destination = urlsplit(attrs[attribute])
+                if tag == "script" and attribute == "src" and attrs == {
+                    "defer": None,
+                    "data-domain": "mem.scapedeck.com",
+                    "src": "https://analytics.ca-17.com/js/script.js",
+                }:
+                    continue
                 self.assertFalse(destination.scheme or destination.netloc,
-                                 "The product page should be self-contained")
+                                 "Only the approved Plausible script may be external")
                 if destination.path:
                     self.assertTrue((PAGE.parent / destination.path).is_file(), attrs[attribute])
                 if destination.fragment:
