@@ -5,7 +5,7 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "_site"
-PAGES = {"index.html", "privacy-policy.html", "support.html"}
+PAGES = {"index.html", "journey.html", "privacy-policy.html", "support.html"}
 CONTROLS = {"_headers"}
 
 
@@ -15,7 +15,7 @@ def stage():
     ).decode().split("\0")
     allowed = {name for name in tracked if name in PAGES | CONTROLS or name.startswith("assets/")}
     if not PAGES | CONTROLS <= allowed:
-        raise SystemExit("The three public HTML pages and deployment controls must be tracked before staging")
+        raise SystemExit("The four public HTML pages and deployment controls must be tracked before staging")
     for name in sorted(allowed):
         source = ROOT / name
         destination = DESTINATION / name

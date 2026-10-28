@@ -27,11 +27,13 @@ jobs:
         with:
           persist-credentials: false
       - name: Check the product page
-        run: python3 scripts/test-product-page.py
+        run: |
+          python3 scripts/test-product-page.py
+          python3 scripts/test-journey-page.py
       - name: Stage public files
         run: |
           mkdir _site
-          cp index.html privacy-policy.html support.html _site/
+          cp index.html journey.html privacy-policy.html support.html _site/
           cp -R assets _site/assets
       - name: Configure Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0

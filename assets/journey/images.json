@@ -1,0 +1,153 @@
+{
+  "description": "Historical app captures and icons selected for the public development story. Opaque privacy masks are the only screenshot edits. No generative interface edits.",
+  "assets": {
+    "calendar-after.png": {
+      "sha256": "3c169db47ccf1c1d0cd8e6d8112506ab1bad09bf31d213cd0cca2853041e3046",
+      "width": 1206,
+      "height": 2622,
+      "caption": "Real photo calendar; fictional entries and AI-generated in-entry photographs.",
+      "redactions": []
+    },
+    "daytwo-home.png": {
+      "sha256": "943c8d1303a6406f987eba38d58e15f422dbc5eac58e4b4ed798a9edaefa69f3",
+      "width": 1206,
+      "height": 2622,
+      "caption": "Day Two after month bands and title changes; synthetic functional fixture.",
+      "redactions": []
+    },
+    "daytwo-icon.png": {
+      "sha256": "e3da86f38c957f609aad628b9bf49ed59c43c7d5925d15b45e5a7de83e83ab1c",
+      "width": 1024,
+      "height": 1024,
+      "caption": "Original blue Day Two icon, exact Git blob from scaffold commit 01b9358.",
+      "redactions": []
+    },
+    "entry-before.png": {
+      "sha256": "6c0f797f21930b88d5d30960a72e0ab6cd8f88f91de3eb94620540992205ea62",
+      "width": 920,
+      "height": 2000,
+      "caption": "Steve’s October 25 phone attachment before compact metadata header; test text. Private location or entry details redacted with opaque masks.",
+      "redactions": [
+        {
+          "box": [
+            86,
+            550,
+            740,
+            656
+          ],
+          "label": "Location redacted"
+        }
+      ]
+    },
+    "first-editor.png": {
+      "sha256": "eeb3ca4ab4728e829a72df596e53750ae6ee4b299c1fcb7a1b29a461fa88c946",
+      "width": 1206,
+      "height": 2622,
+      "caption": "Original editor simulator capture with demonstration text.",
+      "redactions": []
+    },
+    "first-menu.png": {
+      "sha256": "e8e5944f8ad60b0fb89b55684de845386209c42f58574cdd6903e9d1357ed476",
+      "width": 1206,
+      "height": 2622,
+      "caption": "Original Day Two menu; retained October 22 simulator capture, personal archive counts.",
+      "redactions": []
+    },
+    "first-new-post.png": {
+      "sha256": "91f23bad3999ff823bced53b54778fbe000db3381a1c2c7ea303389c1c560060",
+      "width": 920,
+      "height": 2000,
+      "caption": "Steve’s phone attachment: Day Two, 1,405 entries and First new post.  Private location or entry details redacted with opaque masks.",
+      "redactions": [
+        {
+          "box": [
+            523,
+            804,
+            700,
+            851
+          ],
+          "label": "Redacted"
+        },
+        {
+          "box": [
+            28,
+            1100,
+            905,
+            2000
+          ],
+          "label": "Earlier personal entries redacted"
+        }
+      ]
+    },
+    "memscape-dark-icon.png": {
+      "sha256": "c8e3c906e61ede6abb6f670e46dc1f7661e0c32ca98d61a8731d6e2664fa591e",
+      "width": 1024,
+      "height": 1024,
+      "caption": "Actual MemScape dark icon.",
+      "redactions": []
+    },
+    "memscape-icon.png": {
+      "sha256": "150a30dbf67d1b0700cd2c0649c4dd149d0de1da04f09111ea18a420806e219e",
+      "width": 1024,
+      "height": 1024,
+      "caption": "Actual MemScape light icon; layered dawn landscape.",
+      "redactions": []
+    },
+    "memscape-tinted-icon.png": {
+      "sha256": "29b368d6663679b7e3d80690d6f279b63564cade00faac73500d005bd46274b5",
+      "width": 1024,
+      "height": 1024,
+      "caption": "Actual MemScape tinted icon.",
+      "redactions": []
+    },
+    "modern-home.png": {
+      "sha256": "a9d916bd830c4794f8d079e5753645627b6f18da66b733a219edc9c17e077ef2",
+      "width": 1206,
+      "height": 2622,
+      "caption": "Real Home screen; fictional showcase journal.",
+      "redactions": []
+    },
+    "rebrand-home.png": {
+      "sha256": "c7564646c9859ce8f1baa7174fa7b160be1dabb8c597f21cfb395b5b1cb03001",
+      "width": 1206,
+      "height": 2622,
+      "caption": "Original rebrand capture; synthetic functional fixture and placeholder images.",
+      "redactions": []
+    },
+    "showcase-calendar-dark.png": {
+      "sha256": "5deb08cdc966851de7f39cb411cad2bcbdb846ce7ef84cba23977c410173854a",
+      "width": 1206,
+      "height": 2622,
+      "caption": "Real calendar in dark appearance; fictional showcase and generated in-entry photographs.",
+      "redactions": []
+    },
+    "showcase-entry.png": {
+      "sha256": "a0589016784b72b856c65c4f7cb4b70a4a7ef8026937c977645db883f91072a1",
+      "width": 1206,
+      "height": 2622,
+      "caption": "Real entry screen, The long way home; fictional story and generated photograph.",
+      "redactions": []
+    },
+    "tag-colors.png": {
+      "sha256": "480ac76b7c8259b73c40f24f6deb4532e13c5cbb0751139662b1aa4bb1776040",
+      "width": 1206,
+      "height": 2622,
+      "caption": "Real Color screen; fictional showcase journal.",
+      "redactions": []
+    },
+    "ticket-system.png": {
+      "sha256": "3754e40220473439e45c397acbf374bdfd2573c9da6495a95e7327cceb8cbaa3",
+      "width": 798,
+      "height": 1700,
+      "caption": "Historical tkt dashboard supplied by Steve on October 28; a snapshot of work states, not a live backlog.",
+      "redactions": []
+    },
+    "widgets.png": {
+      "sha256": "a18925fdbd73d78a4bae42f57970a12e9c0aeb3aab9f98c6a82fde82c36ef0e3",
+      "width": 1206,
+      "height": 2622,
+      "caption": "Retained simulator capture of installed On This Day and New Entry widgets.",
+      "redactions": []
+    }
+  }
+}
