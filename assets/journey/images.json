@@ -26,7 +26,7 @@
       "sha256": "6c0f797f21930b88d5d30960a72e0ab6cd8f88f91de3eb94620540992205ea62",
       "width": 920,
       "height": 2000,
-      "caption": "Steve’s October 25 phone attachment before compact metadata header; test text. Private location or entry details redacted with opaque masks.",
+      "caption": "Steve’s October 25 phone attachment before compact metadata header; test text. Home-address text redacted with an opaque mask.",
       "redactions": [
         {
           "box": [
@@ -54,10 +54,10 @@
       "redactions": []
     },
     "first-new-post.png": {
-      "sha256": "91f23bad3999ff823bced53b54778fbe000db3381a1c2c7ea303389c1c560060",
+      "sha256": "6873f2093feb28ea5d8a03cf0c09be6ac32f38ac8396ed8086e74f3dc2dda26b",
       "width": 920,
       "height": 2000,
-      "caption": "Steve’s phone attachment: Day Two, 1,405 entries and First new post.  Private location or entry details redacted with opaque masks.",
+      "caption": "Steve’s phone attachment: Day Two, 1,405 entries and First new post.  Home-address text redacted with an opaque mask.",
       "redactions": [
         {
           "box": [
@@ -67,15 +67,6 @@
             851
           ],
           "label": "Redacted"
-        },
-        {
-          "box": [
-            28,
-            1100,
-            905,
-            2000
-          ],
-          "label": "Earlier personal entries redacted"
         }
       ]
     },
