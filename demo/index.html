@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
-  <link rel="icon" href="data:,">
+  <link rel="icon" type="image/png" href="https://mem.scapedeck.com/assets/app-icon.png">
+  <link rel="apple-touch-icon" href="https://mem.scapedeck.com/assets/app-icon.png">
   <link rel="stylesheet" href="/demo/memscape.css">
   <link rel="stylesheet" href="/demo/styles/shell.css">
   <link rel="stylesheet" href="/demo/styles/entry.css">
@@ -13,13 +14,38 @@
   <link rel="stylesheet" href="/demo/styles/photos.css">
   <link rel="stylesheet" href="/demo/styles/calendar.css">
   <link rel="stylesheet" href="/demo/styles/settings.css">
-  <title>MemScape · Interactive simulation</title>
+  <title>MemScape Demo — Explore the Journal App</title>
+  <meta name="description" content="Explore MemScape&#x27;s interactive journal demo with fictional memories, photos, and a visual calendar. Changes last only for this session and reset on reload.">
+  <link rel="canonical" href="https://mem.scapedeck.com/demo/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="/demo/manifest.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="MemScape Demo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta property="og:title" content="MemScape Demo — Explore the Journal App">
+  <meta property="og:description" content="Explore MemScape&#x27;s interactive journal demo with fictional memories, photos, and a visual calendar. Changes last only for this session and reset on reload.">
+  <meta property="og:url" content="https://mem.scapedeck.com/demo/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MemScape">
+  <meta property="og:image" content="https://mem.scapedeck.com/demo/assets/demo-social-v1.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="MemScape demo showing fictional journal entries, colored tags, and a beach memory.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MemScape Demo — Explore the Journal App">
+  <meta name="twitter:description" content="Explore MemScape&#x27;s interactive journal demo with fictional memories, photos, and a visual calendar. Changes last only for this session and reset on reload.">
+  <meta name="twitter:image" content="https://mem.scapedeck.com/demo/assets/demo-social-v1.png">
+  <meta name="twitter:image:alt" content="MemScape demo showing fictional journal entries, colored tags, and a beach memory.">
   <script defer data-domain="mem.scapedeck.com" src="https://analytics.ca-17.com/js/script.js"></script>
 </head>
 <body>
   <p id="error" role="alert" hidden></p>
   <main id="app" aria-label="MemScape journal"></main>
-  <aside class="demo-notice">Simulation of the iPhone app · Fictional memories<br>Edits reset on reload · No sync · <a href="/">About MemScape</a> · <a href="/demo/third-party-notices.txt">Notices</a></aside>
+  <aside class="demo-notice">Simulation of the iPhone app · Fictional memories<br>Edits reset on reload · No sync · <a href="/">About MemScape</a> · <a href="/demo/third-party-notices.txt" target="_blank" rel="noopener">Notices</a></aside>
   <noscript>This simulation requires JavaScript and WebAssembly.</noscript>
   <script type="module" src="/demo/bootstrap.js"></script>
 </body>

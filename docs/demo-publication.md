@@ -66,3 +66,36 @@ matched all 65 public file hashes, checked WASM MIME/CSP, and passed the same
 verification attempts are retained in the source repository evidence directory.
 The Python HTTP client's Cloudflare 1010 rejection was resolved by verifying
 with curl; the real Chrome flow passed without changing site security settings.
+
+## 2026-10-29 combined SEO and Home Screen delivery
+
+Steve explicitly directed “deploy it no indenpendent review” and “no live
+verification” for this delivery. Independent source/public review, remaining
+independent QA and the staged/native matrix are SKIPPED AT USER DIRECTION.
+No post-deployment HTTP, HEAD, browser, device or crawler probes are authorized;
+live behavior and LinkedIn cache are UNVERIFIED. This dated delivery exception
+does not change the general publication procedure above.
+
+Source candidate: [b469463](https://github.com/strefethen/memscape-web/commit/b469463f2d3ad0a9f0e3725bc5eb25dd042ca5b0),
+pushed privately. Exact reused export: `output/demo-home-screen-319813e-a`, built
+from [319813e](https://github.com/strefethen/memscape-web/commit/319813efd4549071f6a6f93202141cb88d825bed).
+The later source commit changes evidence only. Source tests (15), repeat-export
+hashes, browser result records (41), and actual iOS26.0/18.6 Home Screen install
+and chrome-free launch captures are retained in the source repository under
+`docs/evidence/demo-home-screen/`. No further native behavior is certified.
+
+The consumer adds exactly the authentic social card and browser manifest to its
+mandatory format-1 inventory; validates exact metadata, icon/manifest contract
+and approved PNG bytes; adds `manifest-src 'self'` to the existing CSP and an
+explicit `application/manifest+json` response type for the manifest. Product
+pages, analytics, root icon and Wrangler configuration remain unchanged.
+Focused checks: 12 snapshot tests and 7 product-page tests pass. Staging compares
+all payload bytes with their exact source hashes; provenance stays private.
+
+Existing target confirmed in config and Wrangler whoami: account
+`36aee5e0bd1fc4183ff378e9ba6eb59c`, Worker `memscape-site`, custom domain
+`mem.scapedeck.com`, assets `_site`. Current prior version from Wrangler
+deployments list: `4f4b65d6-bb40-43f5-9483-b8cddd2d266d` (2026-10-29 06:00:33 UTC).
+Installed Wrangler 4.154.0 is invoked through its existing cached executable;
+no dependency installation or infrastructure change is needed. Deployment CLI
+result and new version are recorded below after the command completes.

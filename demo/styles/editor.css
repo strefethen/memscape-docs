@@ -1,7 +1,7 @@
 body:has(#app .editor-sheet:not([hidden])) { overflow:hidden; }
 /* Local retained modal; upstream shell construction is consumed once. */
 #app .editor-sheet .ab-sheet-backdrop { position:fixed; inset:0; z-index:100; align-items:flex-end; justify-content:center; background:#0006; padding:0; }
-#app .editor-sheet .ab-sheet-panel { display:flex; flex-direction:column; width:100%; max-width:760px; height:calc(100dvh - max(24px,env(safe-area-inset-top))); max-height:960px; border-radius:16px 16px 0 0; background:var(--surface); color:var(--ink); overflow:hidden; box-shadow:0 -8px 50px #0003; }
+#app .editor-sheet .ab-sheet-panel { display:flex; flex-direction:column; width:100%; max-width:760px; padding-inline:env(safe-area-inset-left) env(safe-area-inset-right); height:calc(100dvh - max(24px,env(safe-area-inset-top))); max-height:960px; border-radius:16px 16px 0 0; background:var(--surface); color:var(--ink); overflow:hidden; box-shadow:0 -8px 50px #0003; }
 #app .editor-sheet .ab-sheet-handle { background:var(--line); }
 #app .editor-sheet .ab-sheet-content { display:flex; flex:1; min-height:0; padding:0; overflow:hidden; }
 #app .editor-sheet .ab-navigationstack { display:flex; flex-direction:column; flex:1; min-width:0; min-height:0; background:var(--surface); }
