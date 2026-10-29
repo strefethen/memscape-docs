@@ -1,15 +1,15 @@
 {
   "format": 1,
   "source_repository": "memscape-web",
-  "source_commit": "d5a94625c8d02f27c6a7cd1cf8efbbe764139cf1",
-  "archive_sha256": "5b7de71e4d8ff53db55faac66d4fb036c2c0bead5e6dd4eb5a53aa6f91e84fa3",
+  "source_commit": "c8a5b32736d5ae10e5a6542934cbe8d9c9833ba6",
+  "archive_sha256": "24cfa2a68d32c2b24de191548c35d56abe7c73ba29a00f766d29020dffee8f91",
   "cargo_lock_sha256": "de818080ab6330432c6a0879506dad81ca6eed22d152bb6f2e248fbc7f73f9a6",
   "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)",
   "wasm_pack": "wasm-pack 0.14.0",
   "build_command": "CARGO_NET_OFFLINE=true wasm-pack build --target web --out-dir www/pkg --release --locked",
   "files": {
     "demo/bootstrap.js": "4595902ee796bb91d48a1b1807c9df20479471a638f017684f2f2928e4e757c7",
-    "demo/index.html": "a4c1519fa11b24b88e4ac4505971dc8f832a22c0d0aebd7c1e1a482e7d48e815",
+    "demo/index.html": "2200fcc7c845b83366b01c6159085f616f5d306f1d2aa3bee4aca6103d6a2c06",
     "demo/memscape.css": "3e32d16caf8ba693dfdaa6c1f9247d5c382ba49671a62b49ea5f91cd944015fb",
     "demo/pkg/memscape_web.js": "66f71cf7180465e2def3c220fd39f42139ba7b501be79493cec83dc070f1faed",
     "demo/pkg/memscape_web_bg.wasm": "1a1136555a2f7780627a95d17efde16d345cf30909df68c3eb395e7e981f42c4",

@@ -2,6 +2,6 @@ https://mem.scapedeck.com/*
   Cache-Control: public, max-age=0, must-revalidate, no-transform
 
 /demo/*
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' https://analytics.ca-17.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://analytics.ca-17.com; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
