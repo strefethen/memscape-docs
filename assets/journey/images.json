@@ -26,7 +26,7 @@
       "sha256": "6c0f797f21930b88d5d30960a72e0ab6cd8f88f91de3eb94620540992205ea62",
       "width": 920,
       "height": 2000,
-      "caption": "Steve’s October 25 phone attachment before compact metadata header; test text. Home-address text redacted with an opaque mask.",
+      "caption": "My October 25 phone screenshot before compact metadata header; test text. Home-address text redacted with an opaque mask.",
       "redactions": [
         {
           "box": [
@@ -57,7 +57,7 @@
       "sha256": "6873f2093feb28ea5d8a03cf0c09be6ac32f38ac8396ed8086e74f3dc2dda26b",
       "width": 920,
       "height": 2000,
-      "caption": "Steve’s phone attachment: Day Two, 1,405 entries and First new post.  Home-address text redacted with an opaque mask.",
+      "caption": "My phone screenshot: Day Two, 1,405 entries and First new post.  Home-address text redacted with an opaque mask.",
       "redactions": [
         {
           "box": [
@@ -130,7 +130,7 @@
       "sha256": "3754e40220473439e45c397acbf374bdfd2573c9da6495a95e7327cceb8cbaa3",
       "width": 798,
       "height": 1700,
-      "caption": "Historical tkt dashboard supplied by Steve on October 28; a snapshot of work states, not a live backlog.",
+      "caption": "Historical tkt dashboard from my development workflow, supplied October 28; a snapshot of work states, not a live backlog.",
       "redactions": []
     },
     "widgets.png": {
