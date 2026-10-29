@@ -1,0 +1,4 @@
+export function collate_tag_names(names,locale) { const c=new Intl.Collator(locale,{usage:'sort',numeric:true,sensitivity:'base'}); return [...names].sort((a,b)=>c.compare(a,b)||(a<b?-1:a>b?1:0)); }
+export function format_month(y,m,locale) { const d=new Date(0); d.setUTCFullYear(y,m-1,1); return new Intl.DateTimeFormat(locale,{calendar:'gregory',timeZone:'UTC',month:'long',year:'numeric'}).format(d); }
+export function format_month_parts(y,m,locale) { const d=new Date(0); d.setUTCFullYear(y,m-1,1); return new Intl.DateTimeFormat(locale,{calendar:'gregory',timeZone:'UTC',month:'long',year:'numeric'}).formatToParts(d); }
+export function format_entry(instant,options) { const d=new Date(instant); if(!Number.isFinite(d.getTime())) throw new Error('Invalid entry instant'); return new Intl.DateTimeFormat(undefined,options).format(d); }

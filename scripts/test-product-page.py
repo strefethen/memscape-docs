@@ -60,7 +60,10 @@ class ProductPageTests(unittest.TestCase):
                 self.assertFalse(destination.scheme or destination.netloc,
                                  "Only the approved Plausible script and TestFlight link may be external")
                 if destination.path:
-                    self.assertTrue((PAGE.parent / destination.path).is_file(), attrs[attribute])
+                    local = PAGE.parent / destination.path
+                    if destination.path == "demo/":
+                        local = local / "index.html"
+                    self.assertTrue(local.is_file(), attrs[attribute])
                 if destination.fragment:
                     self.assertIn(destination.fragment, ids)
             if "aria-controls" in attrs:
@@ -70,6 +73,16 @@ class ProductPageTests(unittest.TestCase):
         self.assertNotIn("@import", css)
         for destination in re.findall(r"url\(['\"]?([^)'\"]+)", css):
             self.assertTrue((PAGE.parent / "assets" / destination).is_file())
+
+    def test_demo_link_and_simulation_description(self):
+        self.assertIn('href="demo/">Try the interactive demo</a>', self.source)
+        self.assertIn('A browser simulation of the iPhone app.', self.source)
+        self.assertIn('Fictional memories, no installation.', self.source)
+        self.assertIn('edits reset when you reload.', self.source)
+        demo = (ROOT / 'demo/index.html').read_text()
+        self.assertIn('Simulation of the iPhone app', demo)
+        self.assertIn('Fictional memories', demo)
+        self.assertIn('Edits reset on reload', demo)
 
     def test_static_default_and_availability(self):
         elements = {attrs["id"]: attrs for _, attrs in self.elements if "id" in attrs}

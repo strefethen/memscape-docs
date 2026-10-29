@@ -1,0 +1,26 @@
+body:has(#app .editor-sheet:not([hidden])) { overflow:hidden; }
+/* Local retained modal; upstream shell construction is consumed once. */
+#app .editor-sheet .ab-sheet-backdrop { position:fixed; inset:0; z-index:100; align-items:flex-end; justify-content:center; background:#0006; padding:0; }
+#app .editor-sheet .ab-sheet-panel { display:flex; flex-direction:column; width:100%; max-width:760px; height:calc(100dvh - max(24px,env(safe-area-inset-top))); max-height:960px; border-radius:16px 16px 0 0; background:var(--surface); color:var(--ink); overflow:hidden; box-shadow:0 -8px 50px #0003; }
+#app .editor-sheet .ab-sheet-handle { background:var(--line); }
+#app .editor-sheet .ab-sheet-content { display:flex; flex:1; min-height:0; padding:0; overflow:hidden; }
+#app .editor-sheet .ab-navigationstack { display:flex; flex-direction:column; flex:1; min-width:0; min-height:0; background:var(--surface); }
+#app .editor-sheet .ab-nav-bar { flex-shrink:0; }
+#app .editor-scroll { display:block; overflow-y:auto; overscroll-behavior:contain; padding:0 20px max(32px,env(safe-area-inset-bottom)); scroll-padding-block:16px 40px; }
+#app .editor-photo { display:block; width:100%; max-height:240px; aspect-ratio:16/9; object-fit:cover; border-radius:6px; margin:16px 0; }
+#app .editor-context { font-size:13px; line-height:1.5; color:var(--secondary); margin:16px 0 8px; }
+#app .editor-tags { margin-bottom:12px; }
+#app .editor-tags:has(.tags:empty) { display:none; }
+#app .editor-scroll .ab-texteditor { display:block; width:100%; min-height:50dvh; resize:none; field-sizing:content; padding:12px 0; border:0; border-radius:0; font:inherit; line-height:1.6; background:var(--surface); color:var(--ink); }
+#app .editor-note { font-size:12px; color:var(--secondary); line-height:1.5; }
+#app .discard-dialog { margin:auto; inset:0; max-height:calc(100dvh - 32px); overflow:auto; width:340px; max-width:calc(100vw - 32px); padding:24px; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:14px; box-shadow:0 12px 60px #0005; }
+#app .discard-dialog::backdrop { background:#0006; }
+#app .discard-dialog h2 { font-size:18px; line-height:1.4; margin:0 0 12px; }
+#app .discard-dialog p { font-size:15px; line-height:1.4; color:var(--secondary); }
+#app .discard-dialog .ab-button { display:block; width:100%; margin-top:8px; padding:8px; }
+#app .discard-dialog .destructive { color:#d33030; }
+@media(min-width:800px) {
+  #app .editor-sheet .ab-sheet-backdrop { align-items:center; padding:32px; }
+  #app .editor-sheet .ab-sheet-panel { max-width:680px; height:calc(100dvh - 64px); border-radius:16px; }
+  #app .editor-scroll { padding-inline:32px; }
+}

@@ -1,0 +1,44 @@
+/* Application navigation slots; the renderer continues to own its controls. */
+#app .journal-pages {height:100%;position:relative;overflow:hidden;}
+#app .screen {height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;background:var(--surface);scroll-padding-bottom:110px;}
+#app .screen>.ab-navigationstack-content {display:block;flex:0 0 auto;padding:0 16px max(120px,calc(100px + env(safe-area-inset-bottom)));}
+#app .screen>.ab-nav-title, #app .screen>.ab-nav-bar {flex:0 0 auto;}
+#app .screen>.ab-nav-title {margin:0;padding:16px 16px 0;color:var(--ink);font-size:22px;line-height:26px;font-weight:700;letter-spacing:-.35px;}
+#app #tab-bar {position:absolute;inset:auto auto max(20px,env(safe-area-inset-bottom)) 50%;transform:translateX(-50%);width:360px;max-width:calc(100% - 32px);height:62px;padding:0;display:flex;align-items:stretch;gap:8px;z-index:3;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;color:var(--ink);}
+#app .tab-capsule, #app #tab-bar>[data-name=tab-search] {background:var(--material);border:1px solid color-mix(in srgb,var(--ink) 8%,transparent);box-shadow:0 4px 24px #00000012,inset 0 1px 1px #ffffff40;backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-radius:32px;}
+#app .tab-capsule {display:flex;flex:1;min-width:0;padding:3px;}
+#app #tab-bar.ab-tab-bar .ab-tab {min-height:44px;min-width:44px;flex:1;padding:0;cursor:pointer;color:var(--ink);gap:2px;border-radius:28px;}
+#app #tab-bar .ab-tab.active {color:var(--pine);background:var(--selection);}
+#app #tab-bar.ab-tab-bar>[data-name=tab-search] {flex:0 0 62px;}
+#app #tab-bar>[data-name=tab-search].active {background:color-mix(in srgb,var(--pine) 18%,var(--material-opaque));}
+#app #tab-bar [data-name=tab-search] .ab-tab-label {display:none;}
+#app #tab-bar .ab-tab-icon {height:28px;}
+#app #tab-bar .ab-icon-tab {width:26px;height:26px;}
+#app #tab-bar [data-name=tab-home] .ab-icon-tab {width:29px;height:27px;}
+#app #tab-bar [data-name=tab-photos] .ab-icon-tab {width:30px;height:26px;}
+#app #tab-bar [data-name=tab-settings] .ab-icon-tab {width:28px;height:28px;}
+#app #tab-bar [data-name=tab-search] .ab-icon-tab {width:26px;height:26px;}
+#app #tab-bar .ab-tab-label {font-size:11px;line-height:13px;font-weight:500;letter-spacing:0;}
+#app #tab-bar .ab-tab.active .ab-tab-label {font-weight:600;}
+#app #tab-bar .ab-button-label:empty {display:none;}
+#app .ab-nav-bar {min-height:56px;padding:4px 12px;background:var(--surface);color:var(--ink);border-bottom:1px solid var(--line);}
+#app .entry-screen>.ab-nav-bar {position:sticky;top:0;z-index:1;}
+#app .ab-nav-bar .ab-button {padding:8px;}
+#app .ab-nav-title-inline {font-size:17px;font-weight:600;color:var(--ink);}
+#app .ab-nav-bar-leading, #app .ab-nav-bar-trailing {flex:1;}
+#app .ab-nav-bar-trailing {justify-content:flex-end;}
+#app .subtitle {margin:0;}
+#app .month[data-first-group=true] {margin-top:0;}
+#app .ab-nav-bar-center {flex:0 1 auto;text-align:center;}
+@media(min-width:800px) {
+  #app .screen>.ab-navigationstack-content {padding-inline:40px;}
+  #app .screen>.ab-nav-title {padding-inline:40px;}
+  #app .month {margin-inline:-40px;padding-inline:40px;}
+}
+@media(prefers-reduced-transparency:reduce) {
+  #app .tab-capsule, #app #tab-bar>[data-name=tab-search] {background:var(--material-opaque);backdrop-filter:none;-webkit-backdrop-filter:none;}
+  #app #tab-bar>[data-name=tab-search].active {background:color-mix(in srgb,var(--pine) 18%,var(--material-opaque));}
+}
+@media(prefers-reduced-motion:reduce) {
+  #app *, #app *::before, #app *::after {animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+}

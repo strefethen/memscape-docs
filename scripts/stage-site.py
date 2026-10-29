@@ -2,6 +2,7 @@
 from pathlib import Path
 import shutil
 import subprocess
+from demo_snapshot import validate_snapshot
 
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "_site"
@@ -14,6 +15,7 @@ def stage():
         ["git", "ls-files", "-z"], cwd=ROOT
     ).decode().split("\0")
     allowed = {name for name in tracked if name in PAGES | CONTROLS or name.startswith("assets/")}
+    allowed |= validate_snapshot(ROOT, set(tracked))
     if not PAGES | CONTROLS <= allowed:
         raise SystemExit("The four public HTML pages and deployment controls must be tracked before staging")
     for name in sorted(allowed):

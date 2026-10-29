@@ -1,0 +1,22 @@
+/* Native-size painted capsules surround retained 44px renderer targets. */
+#app .browse-filters {display:flex;gap:8px;flex-wrap:nowrap;margin:0 -16px;padding:7px 16px 3px;align-items:center;overflow-x:auto;scrollbar-width:none;scroll-padding-inline:16px;scroll-snap-type:x proximity;}
+#app .browse-filters::-webkit-scrollbar {display:none;}
+#app .browse-filters .ab-button, #app .browse-filters .ab-picker {position:relative;isolation:isolate;flex:none;min-height:44px;min-width:44px;margin:0;padding:0 12px;border:0;background:transparent;color:var(--ink);font:600 15px/18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;white-space:nowrap;max-width:none;border-radius:22px;}
+#app .browse-filters .ab-button {display:flex;align-items:center;gap:4px;flex-direction:row-reverse;cursor:pointer;}
+#app .browse-filters .ab-button::before, #app .browse-filters .ab-picker::before {content:"";position:absolute;inset:5px 0;z-index:-1;border-radius:18px;background:var(--pill);pointer-events:none;}
+#app .filter-picker-chrome {display:flex;align-items:center;gap:4px;height:44px;pointer-events:none;}
+#app .browse-filters .ab-picker {width:auto;}
+#app .browse-filters>.ab-button, #app .browse-filters>.ab-picker {scroll-snap-align:start;}
+#app .browse-filters button, #app .browse-filters select {scroll-margin-inline:16px;}
+#app .browse-filters .ab-picker-select {position:absolute;inset:0;width:100%;height:100%;min-height:44px;opacity:0;cursor:pointer;}
+#app .browse-filters .ab-picker:focus-within {outline:2px solid var(--pine);outline-offset:-2px;}
+#app .browse-filters .ab-button:focus-visible {outline-offset:-2px;}
+#app .filter-symbol {width:18px;height:18px;flex:none;pointer-events:none;}
+#app .filter-picker-chrome>.filter-symbol:last-child {width:12px;height:12px;}
+#app .browse-filters .ab-button[aria-pressed=true], #app .browse-filters .ab-picker[data-selected=true] {color:var(--pine);}
+#app .browse-filters .ab-button[aria-pressed=true]::before, #app .browse-filters .ab-picker[data-selected=true]::before {background:color-mix(in srgb,var(--pine) 15%,var(--surface));}
+#app .browse-filters .ab-button:disabled {opacity:.35;cursor:default;}
+#app .browse-empty {white-space:pre-line;text-align:center;color:var(--secondary);padding:52px 8px;line-height:1.6;font-size:17px;}
+#app .search-field {margin:12px 0;}
+#app .search-field input {min-height:48px;width:100%;font-size:17px;border:1px solid var(--line);border-radius:12px;background:var(--back);color:var(--ink);padding:12px;}
+@media(min-width:800px) {#app .browse-filters {margin-inline:-40px;padding-inline:40px;scroll-padding-inline:40px;}}

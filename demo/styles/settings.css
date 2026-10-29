@@ -1,0 +1,22 @@
+/* Grouped renderer List/Section content; all rules belong to these features. */
+#app .settings-screen, #app .tags-screen {background:var(--back);}
+#app .settings-screen .ab-list, #app .tags-screen .ab-list {background:transparent;padding:0;}
+#app .settings-screen .ab-section-card, #app .tags-screen .ab-section-card {background:var(--card);color:var(--ink);overflow:hidden;}
+#app .settings-screen .ab-section-header, #app .tags-screen .ab-section-header {color:var(--secondary);}
+#app .tags-screen .ab-section-header:empty {display:none;}
+#app .settings-row {display:flex;align-items:center;gap:12px;width:100%;min-height:52px;padding:12px 16px;text-align:left;color:var(--ink);font:inherit;border:0;border-bottom:.5px solid var(--line);border-radius:0;background:var(--card);white-space:normal;}
+#app button.settings-row {cursor:pointer;}
+#app .settings-row:last-child {border-bottom:0;}
+#app .settings-row>.ab-button-label:empty {display:none;}
+#app .settings-row-title {flex:1;min-width:0;}
+#app .settings-row-value {color:var(--secondary);font-variant-numeric:tabular-nums;margin-left:auto;text-align:right;}
+#app .disclosure {color:var(--secondary);font-size:24px;}
+#app .journal-statistics {padding:20px 4px;}
+#app .journal-statistic {display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;}
+#app .journal-statistic [data-stat] {font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);}
+#app .stat-label {font-size:12px;color:var(--secondary);}
+#app .settings-footer {font-size:13px;line-height:1.45;color:var(--secondary);padding:0 16px;}
+#app .tags-screen>.ab-nav-bar {position:sticky;top:0;z-index:1;}
+#app .tags-screen .search-field {margin-top:16px;margin-bottom:20px;}
+#app .tags-screen .settings-row .ab-tagpill {font-size:16px;max-width:70%;overflow-wrap:anywhere;}
+#app .tags-screen .ab-nav-title-inline {overflow-wrap:anywhere;}
