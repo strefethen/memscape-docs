@@ -1,20 +1,4 @@
-
-export function civil_parts(instant,zone) {
- const date=new Date(instant); if(!Number.isFinite(date.getTime())) throw new Error('Invalid clock instant');
- const parts=new Intl.DateTimeFormat('en-US-u-ca-gregory-nu-latn',{calendar:'gregory',numberingSystem:'latn',timeZone:zone,year:'numeric',month:'numeric',day:'numeric'}).formatToParts(date);
- const read=k=>{const p=parts.find(p=>p.type===k);if(!p || !/^\d+$/.test(p.value)) throw new Error('Missing Gregorian '+k);return Number(p.value)};
- return [read('year'),read('month'),read('day')];
-}
-export function current_clock() {
- const options=new Intl.DateTimeFormat().resolvedOptions();
- if(!options.timeZone || !options.locale) throw new Error('Browser locale/time zone missing');
- const locale=new Intl.Locale(options.locale);
- const week=typeof locale.getWeekInfo==='function'?locale.getWeekInfo():locale.weekInfo;
- if(!week || !Number.isInteger(week.firstDay)) throw new Error('Locale week information unavailable');
- return [...civil_parts(new Date().getTime(),options.timeZone),week.firstDay,options.timeZone,options.locale];
-}
-export function next_clock_delay() {
- const now=new Date(); const next=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1);
- const delta=next.getTime()-now.getTime(); if(!Number.isFinite(delta)||delta<=0) throw new Error('Cannot schedule local midnight');
- return Math.min(60000,delta+10);
-}
+export function collate_tag_names(names,locale) { const c=new Intl.Collator(locale,{usage:'sort',numeric:true,sensitivity:'base'}); return [...names].sort((a,b)=>c.compare(a,b)||(a<b?-1:a>b?1:0)); }
+export function format_month(y,m,locale) { const d=new Date(0); d.setUTCFullYear(y,m-1,1); return new Intl.DateTimeFormat(locale,{calendar:'gregory',timeZone:'UTC',month:'long',year:'numeric'}).format(d); }
+export function format_month_parts(y,m,locale) { const d=new Date(0); d.setUTCFullYear(y,m-1,1); return new Intl.DateTimeFormat(locale,{calendar:'gregory',timeZone:'UTC',month:'long',year:'numeric'}).formatToParts(d); }
+export function format_entry(instant,options) { const d=new Date(instant); if(!Number.isFinite(d.getTime())) throw new Error('Invalid entry instant'); return new Intl.DateTimeFormat(undefined,options).format(d); }

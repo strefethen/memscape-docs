@@ -12,6 +12,7 @@ STATIC = {'demo/index.html', 'demo/bootstrap.js', 'demo/memscape.css',
           'demo/assets/demo-social-v1.png', 'demo/manifest.webmanifest'} | {
     f'demo/styles/{name}.css' for name in ('shell', 'entry', 'editor', 'browse', 'photos', 'calendar', 'settings')}
 SNIPPET = re.compile(r'demo/pkg/snippets/(?:memscape-web-[a-f0-9]+/inline[0-9]+\.js|pdl-render-[a-f0-9]+/src/mapkit_adapter\.js)')
+STORY_IMAGE = re.compile(r'fixtures/journey/images/[a-z0-9-]+\.png')
 PHOTO = re.compile(r'fixtures/showcase/journal/photos/[A-F0-9-]{36}\.jpg')
 ICON = 'assets/app-icon.png'
 CARD_SHA256 = '9b0c530ca8c8a9530cbb45a81756682af7b71d13d8eca8471ec4be9fbf368d76'
@@ -72,7 +73,7 @@ def validate_public_metadata(root, tracked):
     head = Head(); head.feed(html)
     canonical = 'https://mem.scapedeck.com/demo/'
     title = 'MemScape Demo — Explore the Journal App'
-    description = ("Explore MemScape's interactive journal demo with fictional memories, photos, and a visual calendar. "
+    description = ("Explore how MemScape was built through its development journal, historical screenshots, and visual calendar. "
                    'Changes last only for this session and reset on reload.')
     image = canonical + 'assets/demo-social-v1.png'
     alt = 'MemScape demo showing fictional journal entries, colored tags, and a beach memory.'
@@ -124,8 +125,10 @@ def validate_snapshot(root, tracked):
         raise ValueError('Missing mandatory demo assets')
     if sum(bool(PHOTO.fullmatch(n)) for n in files) != 8:
         raise ValueError('Expected eight synthetic photos')
+    if sum(bool(STORY_IMAGE.fullmatch(n)) for n in files) != 16:
+        raise ValueError('Expected sixteen approved story images')
     for name, expected in files.items():
-        if name not in STATIC and not SNIPPET.fullmatch(name) and not PHOTO.fullmatch(name):
+        if name not in STATIC and not SNIPPET.fullmatch(name) and not PHOTO.fullmatch(name) and not STORY_IMAGE.fullmatch(name):
             raise ValueError(f'Unapproved public snapshot path: {name}')
         if name not in tracked:
             raise ValueError(f'Untracked snapshot file: {name}')
