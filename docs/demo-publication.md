@@ -99,3 +99,20 @@ deployments list: `4f4b65d6-bb40-43f5-9483-b8cddd2d266d` (2026-10-29 06:00:33 UT
 Installed Wrangler 4.154.0 is invoked through its existing cached executable;
 no dependency installation or infrastructure change is needed. Deployment CLI
 result and new version are recorded below after the command completes.
+
+Deployment command completed with exit code 0 on 2026-10-29 UTC:
+`node /Users/stevetrefethen/.npm/_npx/32026684e21afda6/node_modules/wrangler/bin/wrangler.js deploy`.
+Wrangler reported `Uploaded memscape-site`, `Deployed memscape-site triggers`,
+and custom domain `mem.scapedeck.com`. New version:
+`f7d87844-497d-40bb-8e82-da99b1c14f09`.
+Deployed public candidate: [92510e1](https://github.com/strefethen/memscape-docs/commit/92510e18cd8f2ca0c819cb80e5494916433a3daa).
+Snapshot receipt SHA256:
+`2337ecdd39f2264661d00cc83fa8b7b74772ce5f420bcb206a3a326e612370de`.
+Local staging matched all 28 source payload hashes, with 67 public HTML/assets
+and one deployment control. Dry-run passed. Wrangler uploaded six changed
+assets and reused 61. Raw account/prior/dry-run/deploy CLI results and staged
+hashes are retained in `/private/tmp/mw-3523f-evidence/`.
+
+**NO LIVE VERIFICATION was performed.** Command success is the deployment
+receipt; live status, bytes, MIME, behavior, native installs and crawler/LinkedIn
+cache behavior remain UNVERIFIED at Steve's explicit direction.
