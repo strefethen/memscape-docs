@@ -55,6 +55,8 @@ class ProductPageTests(unittest.TestCase):
                     "src": "https://analytics.ca-17.com/js/script.js",
                 }:
                     continue
+                if tag == "link" and attrs == {"rel": "canonical", "href": "https://mem.scapedeck.com/"}:
+                    continue
                 if tag == "a" and attribute == "href" and attrs[attribute] == "https://testflight.apple.com/join/MHj84QRC":
                     continue
                 self.assertFalse(destination.scheme or destination.netloc,
@@ -73,6 +75,23 @@ class ProductPageTests(unittest.TestCase):
         self.assertNotIn("@import", css)
         for destination in re.findall(r"url\(['\"]?([^)'\"]+)", css):
             self.assertTrue((PAGE.parent / "assets" / destination).is_file())
+
+    def test_social_card_metadata_and_image(self):
+        meta = {attrs.get("property") or attrs.get("name"): attrs["content"]
+                for tag, attrs in self.elements if tag == "meta" and "content" in attrs}
+        image = "https://mem.scapedeck.com/assets/social-card-v1.png"
+        self.assertEqual(meta["og:url"], "https://mem.scapedeck.com/")
+        self.assertEqual(meta["og:image"], image)
+        self.assertEqual(meta["twitter:image"], image)
+        self.assertEqual(meta["twitter:card"], "summary_large_image")
+        self.assertTrue(meta["og:image:alt"])
+        self.assertEqual(meta["og:description"], meta["twitter:description"])
+        png = (PAGE.parent / urlsplit(image).path.lstrip("/")).read_bytes()
+        self.assertEqual(png[:8], b"\x89PNG\r\n\x1a\n")
+        width, height, _, color_type = struct.unpack(">IIBB", png[16:26])
+        self.assertEqual((width, height), (int(meta["og:image:width"]), int(meta["og:image:height"])))
+        self.assertEqual((width, height), (1200, 630))
+        self.assertNotIn(color_type, (4, 6))
 
     def test_demo_link_and_simulation_description(self):
         self.assertIn('href="demo/">Try the interactive demo</a>', self.source)
